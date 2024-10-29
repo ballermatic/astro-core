@@ -22,10 +22,50 @@ export const metadataGlobal: SEOProps = {
 	},
 };
 
-// TODO: add menu items and props
-// export const menuLarge = {}
-// export const menuSmall = {}
-// export const menuFooter = {}
+// Menu item type definition (simplified without children)
+export type MenuItem = {
+	label: string;
+	href: string;
+};
+
+// Define menu configurations
+export const menuLarge: MenuItem[] = [
+	{
+		label: 'Home',
+		href: '/',
+	},
+	{
+		label: 'About',
+		href: '/about',
+	},
+	{
+		label: 'Services',
+		href: '/services',
+	},
+	{
+		label: 'Contact',
+		href: '/contact',
+	},
+];
+
+export const menuSmall: MenuItem[] = [
+	{
+		label: 'Home',
+		href: '/',
+	},
+	{
+		label: 'About',
+		href: '/about',
+	},
+	{
+		label: 'Services',
+		href: '/services',
+	},
+	{
+		label: 'Contact',
+		href: '/contact',
+	},
+];
 
 export const configSocial = {
 	linkedin: {

@@ -1,9 +1,8 @@
 ---
+import LayoutGlobal from '@layouts/LayoutGlobal.astro';
 import { SEO } from 'astro-seo';
 import type { Props as SEOProps } from 'astro-seo';
 import { reconcileMetadata } from '@utils/reconcileMetadata';
-import LayoutGlobal from '@layouts/LayoutGlobal.astro';
-import LayoutDefault from '@layouts/LayoutDefault.astro';
 
 // Example page-level meta config
 const metadataPage: Partial<SEOProps> = {
@@ -37,13 +36,5 @@ const metadataReconciled = reconcileMetadata(metadataPage);
 <SEO {...metadataReconciled} />
 
 <LayoutGlobal>
-	<LayoutDefault>
-		<h1 class="mb-8 ~text-3xl/6xl font-expanded font-semibold">Legal</h1>
-		<h2 class="mb-4 ~text-2xl/4xl font-expanded font-semibold">
-			Privacy Policy
-		</h2>
-		<h2 class="mb-4 ~text-2xl/4xl font-expanded font-semibold">
-			Terms of Service
-		</h2>
-	</LayoutDefault>
+	<h1 class="mb-8 ~text-3xl/6xl font-expanded font-semibold">Services</h1>
 </LayoutGlobal>

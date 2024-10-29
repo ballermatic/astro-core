@@ -4,20 +4,22 @@ Starter project with Astro and essential integrations.
 
 ## Features
 
-- ⚡️ Built with [Astro](https://astro.build/) for optimal performance
-- 🎨 Styled with [Tailwind CSS](https://tailwindcss.com/)
-  - Responsive fluid typography
-  - Container and aspect ratio utilities
-  - Variable font support (with subsetted Mona Sans)
-- 🎯 SEO optimized with `astro-seo`
-- 🗺️ Automatic sitemap generation
-- 🎨 3D graphics powered by React Three Fiber
-  - drei helpers
-  - postprocessing effects
-- 🚀 Performance optimizations:
-  - Script optimization with `astro-capo`
-  - Asset compression via `astro-compressor`
-  - Third-party script handling with `partytown`
+🚀 Built with [Astro](https://astro.build/)
+
+- Head ordering with `astro-capo`
+- Compression via `astro-compressor`
+
+🎨 Styled with [Tailwind CSS](https://tailwindcss.com/)
+
+- Responsive fluid typography
+- Container and aspect ratio utilities
+- Variable font support
+- Subsetted Mona Sans variable and monospace
+
+🎯 SEO optimized with `astro-seo`
+
+- Sensible defaults with overrides at the page level
+- Automatic sitemap generation
 
 ## Quick Start
 
@@ -38,24 +40,14 @@ Starter project with Astro and essential integrations.
 - `src/components/` - Reusable UI components
 - `src/layouts/` - Page layouts and templates
 
-## Development Tools
-
-- `npx ai-digest` - Generate LLM-friendly codebase context
-
 ## Deployment
 
 This project is configured for deployment on Cloudflare Pages. Pushes to the main branch will trigger automatic deployments.
 
-## Documentation Links
-
-- [Astro Docs](https://docs.astro.build/)
-- [Tailwind CSS Injection](https://docs.astro.build/en/guides/integrations-guide/tailwind/#applybasestyles)
-- [React Three Fiber](https://docs.pmnd.rs/react-three-fiber)
-
 ## To Do
 
-- Generate fallback fonts
 - Form processing
+- Generate fallback fonts
 - Animation library
 - CMS vs Markdown
 - Error handling

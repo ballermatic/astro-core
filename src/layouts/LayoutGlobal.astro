@@ -1,0 +1,17 @@
+---
+import { Head } from 'astro-capo';
+import { ViewTransitions } from 'astro:transitions';
+import '@styles/base.css';
+---
+
+<html lang="en">
+	<Head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<ViewTransitions />
+	</Head>
+	<body class="h-full w-full ~p-4/8">
+		<slot />
+	</body>
+</html>

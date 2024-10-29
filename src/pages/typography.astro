@@ -1,0 +1,123 @@
+---
+import LayoutGlobal from '@layouts/LayoutGlobal.astro';
+import { stretchValues } from '@styles/fontVariationSettings';
+import resolveConfig from 'tailwindcss/resolveConfig';
+import tailwindConfig from '../../tailwind.config';
+
+// Resolve the Tailwind config
+const fullConfig = resolveConfig(tailwindConfig);
+
+// Extract text sizes from the theme
+const textSizes = Object.keys(fullConfig.theme.fontSize).sort((a, b) => {
+	const sizeA = parseFloat(
+		fullConfig.theme.fontSize[a as keyof typeof fullConfig.theme.fontSize][0],
+	);
+	const sizeB = parseFloat(
+		fullConfig.theme.fontSize[b as keyof typeof fullConfig.theme.fontSize][0],
+	);
+	return sizeB - sizeA;
+});
+
+// Convert the stretch values to a format suitable for the select
+const fontStretchOptions = Object.entries(stretchValues).map(
+	([key, value]) => ({
+		key,
+		value,
+		label: key.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase()),
+	}),
+);
+
+// Sort to ensure 'base' is first if needed
+fontStretchOptions.sort((a, b) =>
+	a.key === 'base' ? -1 : b.key === 'base' ? 1 : 0,
+);
+---
+
+<LayoutGlobal>
+	<div class="container mx-auto p-4">
+		<h1 class="mb-8 ~text-3xl/6xl font-expanded font-semibold">
+			Typography Specimen
+		</h1>
+		<div
+			class="fixed top-4 right-4 bg-gray-400 border border-gray-500 p-4 shadow-lg rounded-md">
+			<label for="fontWeight" class="block text-sm font-semibold mb-1">
+				Font Weight:
+			</label>
+			<input
+				type="number"
+				id="fontWeight"
+				name="fontWeight"
+				min="100"
+				max="900"
+				step="100"
+				value="333"
+				class="w-full px-3 py-2 border border-gray-500 rounded-md"
+			/>
+			<label for="fontStretch" class="block text-sm font-semibold mt-4 mb-1">
+				Font Width:
+			</label>
+			<select
+				id="fontStretch"
+				name="fontStretch"
+				class="w-full px-3 py-2 border border-gray-500 rounded-md">
+				{
+					fontStretchOptions.map(({ key, value, label }) => (
+						<option value={value} selected={key === 'base'}>
+							{label}
+						</option>
+					))
+				}
+			</select>
+		</div>
+
+		<div id="typographySpecimen">
+			{
+				textSizes.map((size) => (
+					<div class="mb-12">
+						<p class={`text-${size} mb-[.25em]`}>
+							The quick brown fox jumps over the lazy dog
+						</p>
+						<p class="text-xs font-mono border-t border-gray-200 pt-2 inline-flex">
+							Class: text-{size} | Weight: <span class="font-weight-value" />
+							&nbsp;|&nbsp;Width: <span class="font-stretch-value" />
+						</p>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</LayoutGlobal>
+
+<script>
+	const fontWeightInput = document.getElementById(
+		'fontWeight',
+	) as HTMLInputElement;
+	const typographySpecimen = document.getElementById('typographySpecimen');
+	const fontWeightValues =
+		typographySpecimen?.querySelectorAll('.font-weight-value');
+	const fontStretchSelect = document.getElementById(
+		'fontStretch',
+	) as HTMLSelectElement;
+	const fontStretchValues = typographySpecimen?.querySelectorAll(
+		'.font-stretch-value',
+	);
+
+	function updateFontSettings() {
+		if (!fontWeightInput || !typographySpecimen) return;
+		const weight = fontWeightInput.value;
+		const stretch = fontStretchSelect?.value || '100%';
+
+		// Apply settings to specimen text only
+		typographySpecimen.querySelectorAll('p:not(.text-xxs)').forEach((p) => {
+			(p as HTMLElement).style.fontVariationSettings =
+				`'wght' ${weight}, 'wdth' ${stretch}`;
+		});
+
+		fontWeightValues?.forEach((el) => (el.textContent = weight));
+		fontStretchValues?.forEach((el) => (el.textContent = stretch));
+	}
+
+	fontWeightInput?.addEventListener('input', updateFontSettings);
+	fontStretchSelect?.addEventListener('change', updateFontSettings);
+	updateFontSettings();
+</script>

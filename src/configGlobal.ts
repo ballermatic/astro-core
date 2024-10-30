@@ -31,16 +31,16 @@ export type MenuItem = {
 // Define menu configurations
 export const menuLarge: MenuItem[] = [
 	{
-		label: 'Home',
-		href: '/',
+		label: 'Services',
+		href: '/services',
 	},
 	{
 		label: 'About',
 		href: '/about',
 	},
 	{
-		label: 'Services',
-		href: '/services',
+		label: 'Blog',
+		href: '/blog',
 	},
 	{
 		label: 'Contact',
@@ -50,16 +50,35 @@ export const menuLarge: MenuItem[] = [
 
 export const menuSmall: MenuItem[] = [
 	{
-		label: 'Home',
-		href: '/',
+		label: 'Services',
+		href: '/services',
 	},
 	{
 		label: 'About',
 		href: '/about',
 	},
 	{
+		label: 'Blog',
+		href: '/blog',
+	},
+	{
+		label: 'Contact',
+		href: '/contact',
+	},
+];
+
+export const menuFooter: MenuItem[] = [
+	{
 		label: 'Services',
 		href: '/services',
+	},
+	{
+		label: 'About',
+		href: '/about',
+	},
+	{
+		label: 'Blog',
+		href: '/blog',
 	},
 	{
 		label: 'Contact',

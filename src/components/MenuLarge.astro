@@ -1,0 +1,14 @@
+---
+import { menuLarge } from '../configGlobal';
+import type { MenuItem } from '../configGlobal';
+---
+
+<nav class="flex items-center gap-8 ~p-4/8" aria-label="Main navigation">
+	{
+		menuLarge.map((item: MenuItem) => (
+			<a href={item.href} class="hover:text-blue-500 transition-colors">
+				{item.label}
+			</a>
+		))
+	}
+</nav>

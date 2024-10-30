@@ -2,6 +2,7 @@
 import { Head } from 'astro-capo';
 import { ViewTransitions } from 'astro:transitions';
 import '@styles/base.css';
+import MenuLarge from '@components/menuLarge.astro';
 ---
 
 <html lang="en">
@@ -11,7 +12,8 @@ import '@styles/base.css';
 		<meta name="viewport" content="width=device-width" />
 		<ViewTransitions />
 	</Head>
-	<body class="h-full w-full ~p-4/8">
+	<body class="h-full w-full">
+		<MenuLarge />
 		<slot />
 	</body>
 </html>

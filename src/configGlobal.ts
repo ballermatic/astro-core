@@ -7,7 +7,7 @@ export const metadataGlobal: SEOProps = {
 	description: 'A brief description of your website content goes here.',
 	openGraph: {
 		basic: {
-			title: 'My Awesome Website',
+			title: 'Default OG Title',
 			type: 'website', // required, allow optional override in pageConfig
 			image: new URL('/og/placeholder.png', import.meta.env.SITE).toString(),
 		},

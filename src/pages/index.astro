@@ -3,7 +3,6 @@ import LayoutGlobal from '@layouts/LayoutGlobal.astro';
 import { SEO } from 'astro-seo';
 import type { Props as SEOProps } from 'astro-seo';
 import { reconcileMetadata } from '@utils/reconcileMetadata';
-import MenuSmall from '@components/MenuSmall.astro';
 
 // Example page-level meta config
 const metadataPage: Partial<SEOProps> = {
@@ -38,5 +37,4 @@ const metadataReconciled = reconcileMetadata(metadataPage);
 
 <LayoutGlobal>
 	<h1 class="mb-8 ~text-3xl/6xl font-expanded font-semibold">Astro Core</h1>
-	<MenuSmall />
 </LayoutGlobal>

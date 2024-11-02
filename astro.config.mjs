@@ -7,7 +7,7 @@ import tailwind from '@astrojs/tailwind';
 import compressor from 'astro-compressor';
 
 export default defineConfig({
-	site: 'https://core-bld.pages.dev',
+	site: 'https://astro-core.gravybo.at',
 	integrations: [
 		tailwind({ applyBaseStyles: false }),
 		sitemap(),

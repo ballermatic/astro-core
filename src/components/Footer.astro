@@ -1,0 +1,15 @@
+---
+import { metadataGlobal } from '../configGlobal';
+---
+
+<footer class="border-t border-black">
+	<div class="container mx-auto py-4">
+		<p class="text-sm">
+			© {new Date().getFullYear()}
+			{metadataGlobal?.openGraph?.optional?.siteName}. <a
+				href="/legal"
+				class="hover:underline">Legal</a
+			>
+		</p>
+	</div>
+</footer>

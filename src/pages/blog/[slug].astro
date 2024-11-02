@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import LayoutDefault from '@layouts/LayoutDefault.astro';
+import LayoutGlobal from '@layouts/LayoutGlobal.astro';
 import { Picture } from 'astro:assets';
 
 // Generate a new path for every collection entry
@@ -17,7 +17,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<LayoutDefault>
+<LayoutGlobal>
 	<div class="mx-auto max-w-3xl mt-14">
 		<span class="uppercase text-xs font-expanded font-light">
 			{entry.data.category}
@@ -64,4 +64,4 @@ const { Content } = await entry.render();
 			>← Back to Blog</a
 		>
 	</div>
-</LayoutDefault>
+</LayoutGlobal>

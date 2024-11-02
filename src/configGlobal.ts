@@ -12,7 +12,7 @@ export const metadataGlobal: SEOProps = {
 			image: new URL('/og/placeholder.png', import.meta.env.SITE).toString(),
 		},
 		optional: {
-			siteName: 'My Awesome Website',
+			siteName: 'Astro Core',
 		},
 	},
 	twitter: {

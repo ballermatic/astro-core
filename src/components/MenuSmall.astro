@@ -1,0 +1,25 @@
+---
+import { menuSmall } from '../configGlobal';
+import type { MenuItem } from '../configGlobal';
+import LogoMark from './LogoMark.astro';
+---
+
+<nav class="md:hidden" aria-label="Mobile navigation">
+	<button
+		popovertarget="mobileMenu"
+		class="text-sm font-medium uppercase border border-black p-2">Menu</button
+	>
+	<div
+		id="mobileMenu"
+		popover
+		class="[&:popover-open]:h-full [&:popover-open]:w-full [&:popover-open]:flex-row [&:popover-open]:items-center p-4">
+		<LogoMark />
+		{
+			menuSmall.map((item: MenuItem) => (
+				<a href={item.href} class="py-3 block text-lg">
+					{item.label}
+				</a>
+			))
+		}
+	</div>
+</nav>

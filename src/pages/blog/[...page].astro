@@ -2,7 +2,7 @@
 import type { PaginateFunction } from 'astro';
 import { getCollection } from 'astro:content';
 import { Picture } from 'astro:assets';
-import LayoutDefault from '@layouts/LayoutDefault.astro';
+import LayoutGlobal from '@layouts/LayoutGlobal.astro';
 
 // Sort content entries by publication date
 
@@ -28,8 +28,8 @@ export async function getStaticPaths({
 const { page } = Astro.props;
 ---
 
-<LayoutDefault>
-	<main class="mt-16">
+<LayoutGlobal>
+	<main>
 		<ul class="grid sm:grid-cols-2 md:grid-cols-3 gap-10 lg:gap-16">
 			{
 				page.data.map((post, index) => (
@@ -74,4 +74,4 @@ const { page } = Astro.props;
 			}
 		</ul>
 	</main>
-</LayoutDefault>
+</LayoutGlobal>

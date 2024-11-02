@@ -2,7 +2,8 @@
 import { Head } from 'astro-capo';
 import { ViewTransitions } from 'astro:transitions';
 import '@styles/base.css';
-import MenuLarge from '@components/menuLarge.astro';
+import Masthead from '@components/Masthead.astro';
+import Footer from '@components/Footer.astro';
 ---
 
 <html lang="en">
@@ -12,8 +13,11 @@ import MenuLarge from '@components/menuLarge.astro';
 		<meta name="viewport" content="width=device-width" />
 		<ViewTransitions />
 	</Head>
-	<body class="h-full w-full">
-		<MenuLarge />
-		<slot />
+	<body class="flex min-h-screen flex-col">
+		<Masthead />
+		<div class="container mx-auto ~py-4/8 grow">
+			<slot />
+		</div>
+		<Footer />
 	</body>
 </html>

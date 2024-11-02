@@ -13,7 +13,7 @@ const config: Config = {
 	theme: {
 		fontFamily: {
 			sans: [
-				'"Mona Sans ExtraLight", sans-serif', // who knows why it's called ExtraLight, yet defaults to that weight, hence base.css html font size override
+				'"Mona Sans", sans-serif',
 				{
 					fontFeatureSettings: '"tnum", "ss03", "ss05"',
 				},

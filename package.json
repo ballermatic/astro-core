@@ -1,6 +1,7 @@
 {
 	"name": "astro-core",
 	"description": "Bare bones Astro starter with essential integrations and opinionated typography.",
+	"private": false,
 	"type": "module",
 	"version": "1.0.0",
 	"scripts": {

@@ -39,26 +39,15 @@ const metadataReconciled = reconcileMetadata(metadataPage);
 	<h1 class="mb-8 ~text-3xl/6xl font-expanded font-semibold tracking-tight">
 		Astro Core
 	</h1>
-	<div class="prose prose-lg max-w-none">
+	<div class="prose prose-lg max-w-none"> 
 		<h2 class="font-expanded !font-medium">Features</h2>
 
 		<div class="grid gap-8 sm:grid-cols-2">
 			<div>
 				<h3 class="font-expanded !font-medium">🚀 Built with Astro</h3>
 				<ul>
-					<li>
-						MDX support with <code class="font-mono font-light bg-gray-200 py-1"
-							>astro-mdx</code>
-					</li>
-					<li>
-						Head ordering with <code
-							class="font-mono font-light bg-gray-200 py-1">astro-capo</code>
-					</li>
-					<li>
-						Compression via <code class="font-mono font-light bg-gray-200 py-1"
-							>astro-compressor</code
-						>
-					</li>
+					<li>MDX support</li>
+					<li>Code compression</li>
 				</ul>
 			</div>
 
@@ -66,21 +55,22 @@ const metadataReconciled = reconcileMetadata(metadataPage);
 				<h3 class="font-expanded !font-medium">🎨 Styled with Tailwind CSS</h3>
 				<ul>
 					<li>
-						Responsive fluid typography via <a
+						Fluid everything via <a
 							href="https://fluid.tw/"
 							class="text-blue-500 no-underline hover:underline"
 							>fluid-tailwind</a
 						>
 					</li>
 					<li>Container and aspect ratio utilities</li>
+					<li>Variable font support</li>
 				</ul>
 			</div>
 
 			<div>
 				<h3 class="font-expanded !font-medium">🎯 SEO optimized</h3>
 				<ul>
-					<li>Sensible defaults with overrides at the page level</li>
-					<li>Automatic sitemap generation</li>
+					<li>Sensible defaults with page level overrides</li>
+					<li>Sitemap</li>
 				</ul>
 			</div>
 
@@ -93,7 +83,6 @@ const metadataReconciled = reconcileMetadata(metadataPage);
 							>src/config/configGlobal.ts</code
 						>
 					</li>
-					<li>Variable font support via custom Tailwind plugin</li>
 					<li>Subsetted Mona Sans VF and Monaspace Argon Var fonts</li>
 				</ul>
 			</div>
